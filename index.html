@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -17,7 +18,7 @@
                 <div class="row">
                     <nav>
                         <ul class="row">
-                            <li>Sobre Nós</li>
+                            <li class="list">Sobre Nós</li>
                             <li>Nossos Quartos</li>
                             <li>Contato</li>
                         </ul>
@@ -31,10 +32,39 @@
     <main>
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide" style="background-image: url('img/slider-1.jpg'); background-size: cover; background-position: center;"></div>
-                <div class="swiper-slide" style="background-image: url('img/slider-2.jpg'); background-size: cover; background-position: center;">Slide 2</div>
-                <div class="swiper-slide" style="background-image: url('img/slider-3.jpg'); background-size: cover; background-position: center;">Slide 3</div>
-                ...
+                <div class="swiper-slide">
+                    <div class="background-image"
+                        style="background-image: url('img/slider-1.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                    </div>
+                    <div class="black-overlay"></div>
+
+                    <div class="slide-content">
+                        <h2>Bem Vindo ao Hotel</h2>
+                        <h1>Onde família e amigos vão sempre se sentir em casa!</h1>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="background-image"
+                        style="background-image: url('img/slider-2.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                    </div>
+                    <div class="black-overlay"></div>
+
+                    <div class="slide-content">
+                        <h2>Bem Vindo ao Hotel</h2>
+                        <h1>Nos escolha uma vez, e sempre nos escolherá.</h1>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="background-image"
+                        style="background-image: url('img/slider-3.jpg'); background-size: cover; background-position: center; width: 100%; height: 100%;">
+                    </div>
+                    <div class="black-overlay"></div>
+
+                    <div class="slide-content">
+                        <h2>Bem Vindo ao Hotel</h2>
+                        <h1>Imagine um lugar onde você pode ser você mesmo.</h1>
+                    </div>
+                </div>
             </div>
 
             <div class="swiper-button-prev"></div>
@@ -42,9 +72,78 @@
         </div>
     </main>
 
+    <section class="banner">
+        <div class="row">
+            <img src="img/banner.jpg" alt="">
+            <div class="content">
+                <h1>Refresque o seu espírito, no estilo do verão.</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+                    et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                    aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                    nisi ut aliquip ex ea commodo consequat.</p>
+
+                <button>Descubra Mais</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="numbers">
+        <div class="row">
+            <div class="item">
+                <div>
+                    <span class="material-symbols-outlined">
+                        home
+                    </span>
+                </div>
+                <h1 data-target="540">0</h1>
+                <p>Quartos Exclusivos</p>
+            </div>
+            <div class="item">
+                <div>
+                    <span class="material-symbols-outlined">
+                        check_circle
+                    </span>
+                </div>
+                <h1 data-target="990">0</h1>
+                <p>Histórias de Sucesso</p>
+            </div>
+            <div class="item">
+                <div>
+                    <span class="material-symbols-outlined">
+                        trophy
+                    </span>
+
+                </div>
+                <h1 data-target="3500">0</h1>
+                <p>Presença Global</p>
+            </div>
+            <div class="item">
+                <div>
+                    <span class="material-symbols-outlined">
+                        award_star
+                    </span>
+                </div>
+                <h1 data-target="54">0</h1>
+                <p>Anos de Experiência</p>
+            </div>
+        </div>
+    </section>
+
+    <button id="btnDark" class="theme-button-dark show_icon">
+        <span class="material-symbols-outlined">dark_mode</span>
+    </button>
+    <button id="btnLight" class="theme-button-light">
+        <span class="material-symbols-outlined">light_mode</span>
+    </button>
+    <button id="up" class="button-up">
+        <span class="material-symbols-outlined">arrow_upward</span>
+    </button>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="app.js"></script>
-
 </body>
 
 </html>

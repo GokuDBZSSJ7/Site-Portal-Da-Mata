@@ -1,46 +1,108 @@
 @import url('https://fonts.googleapis.com/css2?family=Spline+Sans:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@160..700&display=swap');
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    display: block;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: block;
 }
 
 .row {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
+
+body {
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.theme-button-light,
+.theme-button-dark {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 9999;
+  border-radius: 8px 0 0 8px;
+  font-weight: bold;
+  display: none;
+}
+
+.button-up {
+  position: fixed;
+  top: 93%;
+  right: 25px;
+  transform: translateY(-50%);
+  border: none;
+  padding: 10px 12px;
+  cursor: pointer;
+  z-index: 9999;
+  border-radius: 10px;
+  font-weight: bold;
+  background-color: #AD58EB;
+  color: white;
+  z-index: 1000;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.button-up.show {
+  display: block;
+}
+
+.theme-button-light {
+  background-color: #333;
+  color: white;
+}
+
+.theme-button-dark {
+  background-color: #eeeeee;
+  color: rgb(32, 32, 32);
+}
+
+.show_icon {
+  display: block;
+}
+
 
 /*Header*/
 
 header {
-    padding: 12px 0;
-    border-bottom: 1px solid rgb(216, 216, 216);
+  padding: 12px 0;
 }
 
 header .row {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 header nav ul li {
-    font-family: "Spline Sans", sans-serif;
-    list-style: none;
-    color: #000;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    margin: 0 20px;
-    transition: all .3s ease-in-out;
+  font-family: "Spline Sans", sans-serif;
+  list-style: none;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  margin: 0 20px;
+  transition: all .3s ease-in-out;
 }
 
 header nav ul li:hover {
-    color: #AD58EB;
+  color: #AD58EB;
 }
 
 header button {
@@ -79,9 +141,193 @@ header button:hover::before {
 
 .swiper {
   width: 100%;
-  height: 400px;
+  height: 600px;
 }
 
-.swiper-button-prev, .swiper-button-next, .swiper-pagination-bullet-active {
-    color: #AD58EB !important;
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullet-active {
+  color: #AD58EB !important;
+}
+
+.black-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.slide-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  font-family: "Readex Pro", sans-serif;
+}
+
+.slide-content h1 {
+  font-size: 60px;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.swiper-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/*Banner Section*/
+
+.banner {
+  padding: 30px 60px;
+}
+
+.banner .row {
+  align-items: start;
+}
+
+.banner img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.banner .content {
+  width: 50%;
+  padding-top: 20px;
+  padding-left: 40px;
+}
+
+body.dark-mode .banner .content h1,
+body.dark-mode .banner .content p {
+  color: rgb(219, 219, 219);
+}
+
+.banner .content h1 {
+  font-family: "Readex Pro", sans-serif;
+  color: #444444;
+  font-size: 55px;
+  font-weight: 600;
+  line-height: 1.4;
+  padding-bottom: 10px;
+}
+
+.banner .content p {
+  font-size: 18px;
+  font-family: "Spline Sans", sans-serif;
+  color: #222222;
+  line-height: 1.8;
+  margin: 20px 0;
+}
+
+.banner button {
+  background-color: transparent;
+  border: 1px solid #AD58EB;
+  padding: 20px 30px;
+
+  color: #AD58EB;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  /* margin: 0 20px; */
+  transition: color 0.3s ease;
+}
+
+button:hover {
+  color: white;
+}
+
+.banner button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(to right, #AD58EB 50%, #AD58EB 50%);
+  transform: translateX(-50%);
+  z-index: -1;
+  transition: all 0.6s ease;
+}
+
+.banner button:hover::before {
+  width: 200%;
+}
+
+/*numbers*/
+
+.numbers {
+  padding: 120px 0;
+}
+
+.numbers .item {
+  width: 20%;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  transition: all .3s ease-in-out;
+}
+
+.numbers .item span {
+  font-size: 40px;
+}
+
+.numbers .item div {
+  background-color: #def5ee;
+  color: #AD58EB;
+  font-size: 30px;
+  line-height: 1;
+  display: block;
+  width: 80px;
+  height: 80px;
+  line-height: 100px;
+  margin: 0 auto 25px;
+  border-radius: 50%;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.numbers .item h1 {
+  font-family: "Readex Pro", sans-serif;
+  color: #121521;
+  line-height: 1;
+  font-size: 40px;
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
+body.dark-mode .numbers .item h1 {
+  color: rgb(219, 219, 219);
+}
+
+.numbers .item p {
+  color: #AD58EB;
+  line-height: 1;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-family: "Spline Sans", sans-serif;
+}
+
+.numbers .item:hover {
+  margin-bottom: 40px;
 }
